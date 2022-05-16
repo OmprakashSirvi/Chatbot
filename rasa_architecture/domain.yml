@@ -27,15 +27,21 @@ entities:
 #   - time
 #   - task
 
-# slots:
-#   user:
-#     type: unfeaturized
+slots:
+  user:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: user
 
-#   keyword:
-#     type: text
+  #   keyword:
+  #     type: text
 
-#   state:
-#     type: text
+  state:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: state
 
 #   time:
 #     type: text

@@ -1,15 +1,17 @@
 from typing import Dict, List, Text, Any
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
 class GiveScheduleDetais(Action):
     def name(self) -> Text:
-        return "utter_schedule_details"
+        return "action_utter_state_got"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain : Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher, tracker, domain):
 
-        dispatcher.utter_message(text = "Hello from action")
-        return []
+        state = tracker.get_slot("state")
+
+        dispatcher.utter_message(text = f"so you are {state}")
+
+        return [SlotSet('state', state)]
