@@ -1,0 +1,82 @@
+version: '3.1'
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - affirm
+  - bot_challenge
+  - deny
+  - goodbye
+  - greet
+  - mood_great
+  - mood_unhappy
+  # - textual_question
+  - user_state
+#   - schedule_creation
+
+entities:
+  - user
+  - state
+
+# entities:
+#   - user
+#   - keyword
+#   - state
+#   - time
+#   - task
+
+# slots:
+#   user:
+#     type: unfeaturized
+
+#   keyword:
+#     type: text
+
+#   state:
+#     type: text
+
+#   time:
+#     type: text
+
+#   task:
+#     type: unfeaturized
+
+#   days:
+#     type: text
+
+actions:
+  - action_utter_state_got
+
+responses:
+  utter_greet:
+    - text: Hey! How are you?
+    - text: Namaste! How you doin?
+
+  utter_cheer_up:
+    - text: 'Here is something to cheer you up:'
+      image: https://i.imgur.com/nGF1K8f.jpg
+
+  utter_did_that_help:
+    - text: Did that help you?
+    - text: Hope that helped
+
+  utter_happy:
+    - text: Great, carry on!
+    - text: Keep it up!
+
+  utter_goodbye:
+    - text: Bye
+    - text: goodBye!
+
+  utter_iamabot:
+    - text: I am a bot, powered by Rasa.
+    - text: I am a bot, made by Omprakash Sirvi
+
+  # utter_state_got:
+  #   - text: I got your state i will loook into it!!
+
+  utter_schedule_confirm:
+    - text: Your schedule is fixed, hope you follow it!
+    - text: Schedule added, make sure to follow it

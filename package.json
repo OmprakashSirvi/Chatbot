@@ -1,0 +1,32 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "Creating chatbot in web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmprakashSirvi/Chatbot.git"
+  },
+  "author": "OmPrakash Sirvi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmprakashSirvi/Chatbot/issues"
+  },
+  "homepage": "https://github.com/OmprakashSirvi/Chatbot#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}

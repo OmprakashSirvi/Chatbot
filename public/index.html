@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master Chat-Bot</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon-16x16.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="show" />
+
+    <label for="show" class="show-button">
+      <i class="fa-solid fa-robot"></i>
+    </label>
+
+    <section class="message-window" id="message-window">
+      <header class="messg-header">
+        <div class="messg-title">
+          <h5>
+            <i class="fa-solid fa-jedi"></i>
+            Master ChatBot
+            <i class="fa-solid fa-jedi"></i>
+          </h5>
+        </div>
+      </header>
+
+      <main class="mesger-chat">
+        <div class="msg left-msg">
+          <div class="msg-img"></div>
+
+          <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">FriendBot</div>
+              <div class="msg-info-time" id="msg-info-time"></div>
+            </div>
+
+            <div class="msg-text">
+              Hi, welcome to Master ChatBot! Go ahead and send me a message. 😉
+            </div>
+          </div>
+        </div>
+      </main>
+      <form class="mesger-input-area">
+        <input
+          type="text"
+          id="msg-input"
+          class="msger-input"
+          placeholder="Enter your message..."
+        />
+        <button type="submit" class="msger-send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </section>
+    <!-- <video class="main-background-video" autoplay muted loop>
+      <source
+        src="https://ak.picdn.net/shutterstock/videos/1056029879/preview/stock-footage-smart-city-aerial-drone-footage-hologram-information-arches-forming-during-network-communication.webm"
+        type="video/mp4"
+      />
+    </video> -->
+    <header class="main-header">
+      <h1>Master Chat-Bot</h1>
+
+      <nav>
+        <a href="#">About Us</a>
+        <a href="#">Work</a>
+      </nav>
+    </header>
+
+    <section>
+      <img src="" alt="" />
+    </section>
+
+    <footer>
+      <p class="copyright"></p>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+  </body>
+  <script src="scripts/main.js"></script>
+</html>

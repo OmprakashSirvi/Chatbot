@@ -1,0 +1,13 @@
+/.spyproject
+/node_modules
+/Scripts
+/Lib
+/src/__pycache__
+/share
+*.pyc
+*.env
+*.cfg
+.prettierrc
+/.vscode
+/rasa_architecture/models
+/rasa_architecture/.rasa
