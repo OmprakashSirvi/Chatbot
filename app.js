@@ -2,7 +2,11 @@ const cors = require('cors');
 const morgan = require('morgan');
 const express = require('express');
 const { spawn } = require('child_process');
+
+const AppError = require('./utils/AppError');
 const chatRoute = require('./Routes/chatRoutes');
+const calendarRoute = require('./Routes/calendarRoutes');
+const globalErrorHandler = require('./Controllers/errorController');
 
 const app = express();
 
@@ -14,26 +18,35 @@ app.use(express.json());
 if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'));
 }
+/**
+ * Right now there is no use for this piece of code
+ */
+// const getScriptData = (fileName, ...args) => {
+//   return new Promise((resolve, reject) => {
+//     console.log(args);
+//     const python = spawn('python', [fileName, args]);
 
-const getScriptData = (fileName, ...args) => {
-  return new Promise((resolve, reject) => {
-    console.log(args);
-    const python = spawn('python', [fileName, args]);
+//     python.on('error', (err) => {
+//       console.log(err.message);
+//       reject('Could not run your python script');
+//     });
 
-    python.on('error', (err) => {
-      console.log(err.message);
-      reject('Could not run your python script');
-    });
+//     python.stdout.on('data', (data) => {
+//       resolve(data.toString());
+//     });
 
-    python.stdout.on('data', (data) => {
-      resolve(data.toString());
-    });
+//     python.stdout.on('close', (code) => {
+//       reject(code);
+//     });
+//   });
+// };
 
-    python.stdout.on('close', (code) => {
-      reject(code);
-    });
-  });
-};
+// add time of requrest to the incomming request
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  // console.log(req.headers);
+  next();
+});
 
 app.get('/api/v1/', (req, res) => {
   res.status(200).json({
@@ -42,6 +55,22 @@ app.get('/api/v1/', (req, res) => {
   });
 });
 
+app.get('/api/v1/getError', (req, res, next) => {
+  next(new AppError('Error sent from error route', 401));
+});
+
 app.use('/api/v1/chat', chatRoute);
+app.use('/api/v1/schedule', calendarRoute);
+
+// After this no route will be accepted
+app.all('*', (req, res, next) => {
+  // const err = new Error(`Can't find ${req.originalUrl}`);
+  // err.status = 'fail';
+  // err.statusCode = 404;
+  // next(err);
+  next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+});
+
+app.use(globalErrorHandler);
 
 module.exports = app;
