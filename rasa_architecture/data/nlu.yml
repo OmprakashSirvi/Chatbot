@@ -91,6 +91,7 @@ nlu:
       - [i](user) am [fine](state)
       - [i](user) am [doing great](state)
       - everything is going [fine](state)
+      - [i](user) am [not doing that fine](state)
 
   # - intent: textual_question
   #   examples: |

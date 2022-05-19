@@ -4,7 +4,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
-class GiveScheduleDetais(Action):
+class GiveUserStateDetails(Action):
     def name(self) -> Text:
         return "action_utter_state_got"
 

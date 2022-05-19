@@ -1,4 +1,5 @@
 /.spyproject
+/.gitignore
 /node_modules
 /Scripts
 /Lib

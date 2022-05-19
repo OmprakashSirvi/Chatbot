@@ -1,2 +1,2 @@
 
-from .Schedule import GiveScheduleDetais
+from .UserState import GiveUserStateDetails

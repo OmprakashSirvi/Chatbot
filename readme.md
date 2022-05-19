@@ -11,7 +11,7 @@ recommended version: python 3.8
 And then run this command
 pip install rasa-x==0.42.5 --extra-index-url https://pypi.rasa.com/simple
 
-and then install all tese packages:
+and then install all these packages:
 Flask
 pymongo[srv]
 sklearn
@@ -23,9 +23,18 @@ google-api-python-client
 
 Remember to change dir to rasa_architecture folder
 
-to run chatbot use this:
+To run chatbot use this:
+
 rasa train
 
 rasa run actions
 
 rasa shell
+
+Now to interact with the bot more deeply use this:
+
+rasa interactive
+
+To start the api server use this command :
+
+rasa run --enable-api --i 127.0.0.1 -p 4000
