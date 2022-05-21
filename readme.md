@@ -4,7 +4,9 @@ To get started run the following commands
 
 npm install
 
-create a python virtual envirnoment
+create a python virtual envirnoment:
+
+python virtualenv python=python3.8
 
 recommended version: python 3.8
 
