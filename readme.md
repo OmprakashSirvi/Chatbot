@@ -2,26 +2,28 @@ This is my CP project where i am creating a chatbot
 
 To get started run the following commands
 
-npm install
+1: npm install
 
-create a python virtual envirnoment:
+2: create a python virtual envirnoment:
+virtualenv chatbot_env --python=python3.8
+(recommended version: python 3.8)
 
-python virtualenv python=python3.8
+3: Now activate your virtual envirnoment
 
-recommended version: python 3.8
-
-And then run this command
+4: And then run this command
 pip install rasa==3.1 --extra-index-url https://pypi.rasa.com/simple
 
-and then install all these packages:
+5: Meanwhile make sure you have docker installed in your system
+
+6: With docker installed excecute this command:
+docker pull rasa/duckling
+
+7: And then install all these packages:
 Flask
-pymongo[srv]
 sklearn
-apiclient
-tensorflow
+pymongo[srv]
 flask_restful
 flask_pymongo
-google-api-python-client
 
 Remember to change dir to rasa_architecture folder
 
