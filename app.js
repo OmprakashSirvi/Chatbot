@@ -1,10 +1,18 @@
+const dotenv = require('dotenv');
+
+dotenv.config({ path: './config.env' });
+
 const cors = require('cors');
+const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
 const { spawn } = require('child_process');
 
 const AppError = require('./utils/AppError');
+const viewRoute = require('./Routes/viewRoutes');
+const userRoute = require('./Routes/userRoutes');
 const chatRoute = require('./Routes/chatRoutes');
+const weatherRoute = require('./Routes/weatherRoute');
 const calendarRoute = require('./Routes/calendarRoutes');
 const globalErrorHandler = require('./Controllers/errorController');
 
@@ -48,6 +56,27 @@ app.use((req, res, next) => {
   next();
 });
 
+// set the template folder path
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// app.use(express.static(path.join(__dirname, 'public')));
+
+// /**
+//  * test for google sign in..
+//  */
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
+
+// app.get('/login', (req, res) => {
+//   res.render('login');
+// });
+
+// ////
+
+// ////
+
 app.get('/api/v1/', (req, res) => {
   res.status(200).json({
     status: 'sucecss',
@@ -59,7 +88,10 @@ app.get('/api/v1/getError', (req, res, next) => {
   next(new AppError('Error sent from error route', 401));
 });
 
+app.use('/', viewRoute);
 app.use('/api/v1/chat', chatRoute);
+app.use('/api/v1/user', userRoute);
+app.use('/api/v1/weather', weatherRoute);
 app.use('/api/v1/schedule', calendarRoute);
 
 // After this no route will be accepted

@@ -42,6 +42,11 @@ stories:
       - intent: user_state
       - action: action_utter_state_got
 
+  - story: ask_weather_short
+    steps:
+      - intent: ask_weather
+      - action: action_utter_weather
+
   # - story: create_schedule
   #   steps:
   #     - intent: create_schedule

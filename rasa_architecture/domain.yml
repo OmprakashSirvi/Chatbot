@@ -14,11 +14,13 @@ intents:
   - mood_unhappy
   # - textual_question
   - user_state
+  - ask_weather
 #   - schedule_creation
 
 entities:
   - user
   - state
+  - location
 
 # entities:
 #   - user
@@ -43,6 +45,12 @@ slots:
       - type: from_entity
         entity: state
 
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
 #   time:
 #     type: text
 
@@ -54,6 +62,7 @@ slots:
 
 actions:
   - action_utter_state_got
+  - action_utter_weather
 
 responses:
   utter_greet:

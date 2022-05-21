@@ -9,7 +9,7 @@ create a python virtual envirnoment
 recommended version: python 3.8
 
 And then run this command
-pip install rasa-x==0.42.5 --extra-index-url https://pypi.rasa.com/simple
+pip install rasa==3.1 --extra-index-url https://pypi.rasa.com/simple
 
 and then install all these packages:
 Flask
@@ -36,5 +36,7 @@ Now to interact with the bot more deeply use this:
 rasa interactive
 
 To start the api server use this command :
+
+docker run rasa/duckling
 
 rasa run --enable-api --i 127.0.0.1 -p 4000
