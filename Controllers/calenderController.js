@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: '../config.env' });
 // Require google from googleapis package.
-const { google, networkmanagement_v1beta1 } = require('googleapis');
+const { google } = require('googleapis');
 
 // Require oAuth2 from our google instance.
 const { OAuth2 } = google.auth;
@@ -67,7 +67,7 @@ exports.createSchedule = async (req, res, next) => {
     (err, response) => {
       // Check for errors in our query and log them if they exist.
       if (err) {
-        return next(new AppError(`Free Busy Query Error: {err}`), 410);
+        return next(new AppError(`Free Busy Query Error: ${err}`), 410);
       }
 
       // Create an array of all events on our calendar during that time.

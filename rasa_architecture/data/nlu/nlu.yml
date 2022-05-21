@@ -271,8 +271,9 @@ nlu:
     #     - what is [GitHUb](keyword)
     #     - who is [Shree Krishna](keyword)
 
-    # - intent: schedule_creation
-    #   examples: |
-    #     - I want to [play cricket](task) at [6 pm today](time)
-    #     - My [dinner](task) time is [7 pm everyday](time)
-    #     - I [wake up](task) at [6 am](time)
+  - intent: schedule_creation
+    examples: |
+      - I want to [play cricket](task) at [6 pm today](time)
+      - My [dinner](task) time is [7 pm everyday](time)
+      - I [wake up](task) at [6 am](time)
+      - My [meeting with Nikhil](task) is schedulded at [7pm tommorow](time)

@@ -15,12 +15,14 @@ intents:
   # - textual_question
   - user_state
   - ask_weather
-#   - schedule_creation
+  - schedule_creation
 
 entities:
   - user
   - state
   - location
+  - time
+  - task
 
 # entities:
 #   - user
@@ -51,11 +53,17 @@ slots:
       - type: from_entity
         entity: location
 
-#   time:
-#     type: text
+  time:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: time
 
-#   task:
-#     type: unfeaturized
+  task:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: task
 
 #   days:
 #     type: text
@@ -63,6 +71,8 @@ slots:
 actions:
   - action_utter_state_got
   - action_utter_weather
+  - action_utter_schedule_confirmation
+  - action_create_schedule
 
 responses:
   utter_greet:
@@ -91,7 +101,3 @@ responses:
 
   # utter_state_got:
   #   - text: I got your state i will loook into it!!
-
-  utter_schedule_confirm:
-    - text: Your schedule is fixed, hope you follow it!
-    - text: Schedule added, make sure to follow it
