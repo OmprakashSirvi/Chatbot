@@ -3,7 +3,8 @@
 /node_modules
 /Scripts
 /Lib
-/src
+/src/models
+/src/__pycache__
 /share
 *.pyc
 *.env
