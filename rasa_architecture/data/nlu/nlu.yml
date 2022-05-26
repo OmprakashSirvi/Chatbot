@@ -277,3 +277,10 @@ nlu:
       - My [dinner](task) time is [7 pm everyday](time)
       - I [wake up](task) at [6 am](time)
       - My [meeting with Nikhil](task) is schedulded at [7pm tommorow](time)
+
+  - intent: expense_tracker
+    examples: |
+      - I spent [300 rupees](price) on [chocolate](item) [today](time)
+      - I paid my [rent](item) [today](time) of worth [7000 rupees](price)
+      - I spent [100 rupees](price) on my [mobile recharge](item)
+      - I bought [10 rupees](price) [pen](item) [today](time)

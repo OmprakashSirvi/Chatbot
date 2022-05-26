@@ -69,10 +69,6 @@ app.get('/', (req, res) => {
   res.render('index.html');
 });
 
-app.get('/chat', (req, res) => {
-  res.render('chat');
-});
-
 // app.get('/login', (req, res) => {
 //   res.render('login');
 // });

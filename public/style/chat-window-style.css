@@ -24,9 +24,8 @@
   text-align: center;
   background-color: #333;
   color: #909090;
+  z-index: 4;
   /* background-image: linear-gradient(to top right, lightyellow, lightblue); */
-  /* width: 50px;
-  height: 50px; */
 }
 
 .show-button i {
@@ -38,30 +37,20 @@
 }
 
 .show-button:hover {
-  /* background-image: linear-gradient(rgb(18, 191, 244), rgb(46, 255, 60)); */
-  /* background-color: #000; */
-  /* font-weight: bold; */
   color: #62a2a0;
   border-radius: 500%;
   text-shadow: 0px 0px 2px #62a2a0;
   box-shadow: 0px 0px 15px 5px #62a2a0;
-  /* border: 2px solid #00c3ff; */
   transition: 0.5s;
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-#show:checked ~ section .message-window {
-  display: flex;
-  flex-flow: column;
 }
 
 /* Full message Window */
 section .message-window {
   /* Display property */
-  display: none;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+
   position: fixed;
   bottom: 8%;
   right: 26%;
@@ -70,8 +59,6 @@ section .message-window {
   border-radius: 10px;
   box-shadow: 3px 0px 10px #62a2a0;
   z-index: 2;
-  /* margin: 80px auto; */
-  /* border: 0.5px solid #000; */
 }
 
 /* Message Window Heading */
@@ -86,7 +73,6 @@ h5 {
   letter-spacing: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* border: 0.5px solid #000; */
 }
 
 /* Message Window Animation */
@@ -144,10 +130,7 @@ section .message-window {
   overflow-y: auto;
   padding: 10px;
   background-color: #d0f2ed;
-  /* background-image: url("https://images.pexels.com/photos/1076885/pexels-photo-1076885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
   background-size: cover;
-  /* border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; */
 }
 
 .mesger-chat::-webkit-scrollbar {
@@ -226,7 +209,6 @@ section .message-window {
   display: flex;
   padding: 8px;
   background: #79c7c5;
-  /* justify-content: space-between; */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -234,7 +216,6 @@ section .message-window {
 .mesger-input-area * {
   padding: 4px;
   border: none;
-  /* border-radius: 3px; */
   font-size: 1rem;
 }
 
@@ -248,7 +229,6 @@ section .message-window {
   margin-left: 10px;
   background: #36d7ff;
   color: #000;
-  /* font-weight: bold; */
   cursor: pointer;
   border-radius: 10px;
   transition: background 0.5s;

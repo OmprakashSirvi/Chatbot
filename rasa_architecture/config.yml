@@ -34,7 +34,7 @@ pipeline:
     # url of the running duckling server
     url: 'http://127.0.0.1:5000'
     # dimensions to extract
-    dimensions: ['time']
+    dimensions: ['time', 'amount-of-money']
     # allows you to configure the locale, by default the language is
     # used
     locale: 'EN'

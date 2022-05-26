@@ -16,6 +16,7 @@ intents:
   - user_state
   - ask_weather
   - schedule_creation
+  - expense_tracker
 
 entities:
   - user
@@ -23,6 +24,8 @@ entities:
   - location
   - time
   - task
+  - item
+  - price
 
 # entities:
 #   - user
@@ -65,6 +68,18 @@ slots:
       - type: from_entity
         entity: task
 
+  item:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item
+
+  price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: price
+
 #   days:
 #     type: text
 
@@ -73,6 +88,7 @@ actions:
   - action_utter_weather
   - action_utter_schedule_confirmation
   - action_create_schedule
+  - action_add_expense
 
 responses:
   utter_greet:

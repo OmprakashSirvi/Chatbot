@@ -54,6 +54,11 @@ stories:
       - intent: affirm
       - action: action_create_schedule
 
+  - story: add_expense
+    steps:
+      - intent: expense_tracker
+      - action: action_add_expense
+
   # - story: create_schedule
   #   steps:
   #     - intent: create_schedule

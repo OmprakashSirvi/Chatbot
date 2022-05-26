@@ -68,4 +68,52 @@ function formatDate(date) {
   return `${h.slice(-2)}:${m.slice(-2)}`;
 }
 
-// For Message window
+// Mobile Menu button
+const menuBtn = document.querySelector('.menu-btn');
+const navItems = document.querySelector('.nav-items');
+
+menuBtn.addEventListener('click', (event) => {
+  navItems.classList.toggle('mobile-menu');
+});
+
+// For login
+let toogle = false;
+
+const loginPage = document.querySelector('.login__page');
+const login = document.querySelector('.login');
+
+login.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (toogle === false) {
+    loginPage.style.visibility = 'visible';
+
+    toogle = true;
+  } else if (toogle === true) {
+    loginPage.style.visibility = 'hidden';
+    toogle = false;
+  }
+});
+
+// For chat window
+
+const button = document.querySelector('.show-button');
+const chatWindow = document.querySelector('.message-window');
+
+button.addEventListener('click', (event) => {
+  event.preventDefault();
+  // console.log("Clicked");
+  if (toogle === false) {
+    chatWindow.style.visibility = 'visible';
+
+    toogle = true;
+  } else if (toogle === true) {
+    chatWindow.style.visibility = 'hidden';
+
+    toogle = false;
+  }
+});
+
+// For focus on email
+document.querySelector('#ln').onclick = function () {
+  document.querySelector('.email').focus();
+};
