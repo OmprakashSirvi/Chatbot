@@ -1,13 +1,8 @@
-import datetime
+import datetime, requests
 
 from typing import Dict, List, Text, Any
-from urllib import response
-
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
-from rasa_sdk.executor import CollectingDispatcher
 
-from flask import jsonify, request
 
 class ConfirmScheduleDetails(Action):
     def name(self) -> Text:
@@ -18,14 +13,16 @@ class ConfirmScheduleDetails(Action):
         req_time = tracker.get_slot("time")
         task = tracker.get_slot("task")
 
-        # con_time = datetime.datetime.strptime(req_time, "%Y-%m-%dT%H:%M:%S.000+00:00")
-        # end_time = con_time + datetime.timedelta(minutes = 60)
+        con_time = datetime.datetime.strptime(req_time, "%Y-%m-%dT%H:%M:%S.000+00:00")
+        end_time = con_time + datetime.timedelta(minutes = 60)
 
-        # data = {"startTime" : str(con_time), "endTime" : str(end_time), 'task' : task}
+        data = {"startTime" : str(con_time), "endTime" : str(end_time), 'task' : task}
 
-        # response = request.post("http://127.0.0.1:8000/api/v1/schedule", json = data)
+        response = requests.post("http://127.0.0.1:8000/api/v1/schedule", json = data)
+        response = response.json()
+        # print(response)
 
-        dispatcher.utter_message(text = f"time is {str(req_time)} and task is {task}")
+        dispatcher.utter_message(text = f"{response['message']}")
 
         return []
 

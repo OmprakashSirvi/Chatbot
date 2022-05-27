@@ -17,7 +17,7 @@ const PERSON_IMG =
 const BOT_NAME = 'ChatBot';
 const PERSON_NAME = 'You';
 
-msgerForm.addEventListener('submit', (event) => {
+msgerForm.addEventListener('click', (event) => {
   event.preventDefault();
 
   const msgText = msgerInput.value;

@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense.js/NewExpense";
+import { useDispatch, useSelector } from "react-redux";
+import { expensAction } from "./store/expenseSlice";
+import { fetchExpenseData, sendCartData } from "./store/expenseAction";
 
 // import "./App.css";
 
@@ -27,9 +30,22 @@ const DUMMY_EXPENSES = [
 ];
 
 const App = () => {
+  const dispatch = useDispatch();
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const expenseData = useSelector((state) => state.expense);
+  useEffect(() => {
+    dispatch(fetchExpenseData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (expenseData.changed) {
+      dispatch(sendCartData(expenseData));
+    }
+  }, [expenseData, dispatch]);
 
   const addExpenseHandler = (expense) => {
+    dispatch(expensAction.addExpense(expense));
+    console.log(expenseData.expenses, expenses);
     setExpenses((prevExpense) => {
       return [expense, ...prevExpense];
     });
@@ -47,7 +63,7 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={expenseData.expenses} />
     </div>
   );
 };

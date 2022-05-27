@@ -12,6 +12,7 @@ intents:
   - greet
   - mood_great
   - mood_unhappy
+  - can_you_help
   # - textual_question
   - user_state
   - ask_weather
@@ -25,7 +26,7 @@ entities:
   - time
   - task
   - item
-  - price
+  - amount-of-money
 
 # entities:
 #   - user
@@ -74,11 +75,11 @@ slots:
       - type: from_entity
         entity: item
 
-  price:
+  amount-of-money:
     type: text
     mappings:
       - type: from_entity
-        entity: price
+        entity: amount-of-money
 
 #   days:
 #     type: text
@@ -110,10 +111,18 @@ responses:
   utter_goodbye:
     - text: Bye
     - text: goodBye!
+    - text: take care
 
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
     - text: I am a bot, made by Omprakash Sirvi
+    - text: I am a bot
+
+  utter_agent_can_you_help:
+    - text: I will try my best
+    - text: "I'll certainly try my best."
+    - text: "Sure. I'd be happy to. What's up?"
+    - text: "I'm glad to help. What can I do for you?"
 
   # utter_state_got:
   #   - text: I got your state i will loook into it!!

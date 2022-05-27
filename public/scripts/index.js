@@ -6,12 +6,12 @@ const login_function = (username, password) => {
   const url = '';
 };
 
-const button = document.querySelector('.submit');
+// const button = document.querySelector('.msger-send-btn');
 
-button.addEventListener('click', (e) => {
-  e.preventDefault();
-  console.log('clicked');
-});
+// button.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   console.log('clicked');
+// });
 
 const speak = async (input) => {
   try {
@@ -31,15 +31,13 @@ const speak = async (input) => {
 
 document
   .querySelector('.msger-send-btn')
-  .addEventListener('submit', async (e) => {
+  .addEventListener('click', async (e) => {
     e.preventDefault();
-
+    console.log('clicked');
     // const input = document.querySelector('#msg-input').value;
     const input = document.getElementsByClassName('msger-input')[0];
-    console.log(input);
-    const output = await speak(input.value);
 
-    console.log(output);
+    const output = await speak(input.value);
 
     const outTemplate = `
       <div class="msg left-msg">
@@ -47,7 +45,7 @@ document
 
       <div class="msg-bubble">
         <div class="msg-info">
-          <div class="msg-info-name">FriendBot</div>
+          <div class="msg-info-name">Cooper</div>
           <div class="msg-info-time" id="msg-info-time"></div>
         </div>
 

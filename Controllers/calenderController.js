@@ -10,6 +10,7 @@ const { OAuth2 } = google.auth;
 const AppError = require('../utils/AppError');
 
 exports.createSchedule = async (req, res, next) => {
+  console.log('Creating schedule..');
   // authorisation of user
 
   const oAuth2Client = new OAuth2(
@@ -98,7 +99,12 @@ exports.createSchedule = async (req, res, next) => {
 
       // If event array is not empty log that we are busy.
       console.log(`Sorry I'm busy...`);
-      return next(new AppError('current time period is already'), 412);
+      return next(
+        new AppError(
+          'current time period is already taken, select some other time for your event..'
+        ),
+        412
+      );
     }
   );
 };

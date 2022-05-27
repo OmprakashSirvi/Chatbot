@@ -265,6 +265,68 @@ nlu:
       - what is my name?
       - what's my name?
 
+  - intent: can_you_help
+    examples: |
+      - I need you to help me
+      - I need you to do something for me
+      - I need a hand
+      - will you help me
+      - can you do something for me
+      - help me with a problem
+      - can you help me
+      - help me
+      - assistance
+      - I need your help
+      - I need help
+      - you can help me
+      - can you help me with something
+      - can you help
+      - assist
+      - can u help me
+      - I need some help
+      - you help me
+      - do you help me
+      - could you give me a hand
+      - can you help me out
+      - need help
+      - I need you
+      - can you help me now
+      - I want your help
+      - need your help
+      - assist me
+      - are you going to help me
+      - can you help me with that
+      - help
+      - I need you right now
+      - would you help me
+      - can you assist me
+      - sos
+      - do you want to help me
+      - please help me
+      - can you help us
+      - do me a favor
+      - are you gonna help me?
+      - you ready to answer my question?
+      - i need some details
+      - i need some information
+      - i need your help in getting some info
+      - can you give me some info
+      - i want something
+      - i want to know few details
+      - will you provide some details
+      - can you fetch some details for me
+      - would you mind giving me some details
+
+  - intent: thanking
+    examples: |
+      - Thank you
+      - I am so glad you helped
+      - I am grateful to you
+      - You made my day easy
+      - Thank you for helping me
+      - Thanks
+      - dhanyawad
+
     # - intent: textual_question
     #   examples: |
     #     - what is [international space station](keyword)
@@ -280,7 +342,8 @@ nlu:
 
   - intent: expense_tracker
     examples: |
-      - I spent [300 rupees](price) on [chocolate](item) [today](time)
-      - I paid my [rent](item) [today](time) of worth [7000 rupees](price)
-      - I spent [100 rupees](price) on my [mobile recharge](item)
-      - I bought [10 rupees](price) [pen](item) [today](time)
+      - I spent [300 rupees](amount-of-money) on [chocolate](item) [today](time)
+      - I paid my [rent](item) [today](time) of worth [7000 rupees](amount-of-money)
+      - I spent [100 rupees](amount-of-money) on my [mobile recharge](item)
+      - I bought [10 rupees](amount-of-money) [pen](item) [today](time)
+      - i bought a [toy car](item) of worth [2 rupees](price) [today](time)
