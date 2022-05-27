@@ -112,6 +112,7 @@ responses:
     - text: Bye
     - text: goodBye!
     - text: take care
+    - text: see ya!
 
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
@@ -124,5 +125,10 @@ responses:
     - text: "Sure. I'd be happy to. What's up?"
     - text: "I'm glad to help. What can I do for you?"
 
+  utter_welcome:
+    - text: Your are welcome
+    - text: most welcome
+    - text: happy to help
+    - text: any time
   # utter_state_got:
   #   - text: I got your state i will loook into it!!

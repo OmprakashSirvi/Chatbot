@@ -48,6 +48,8 @@ stories:
     steps:
       - intent: ask_weather
       - action: action_utter_weather
+      - intent: thanking
+      - action: utter_welcome
 
   - story: ask_weather_long
     steps:
@@ -66,6 +68,17 @@ stories:
       - action: action_utter_schedule_confirmation
       - intent: affirm
       - action: action_create_schedule
+      - intent: thanking
+      - action: utter_welcome
+
+  - story: add_expense_thank
+    steps:
+      - intent: expense_tracker
+      - action: action_add_expense
+      - intent: thanking
+      - action: utter_welcome
+      - intent: goodbye
+      - action: utter_goodbye
 
   - story: add_expense
     steps:
