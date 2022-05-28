@@ -29,22 +29,12 @@ entities:
   - item
   - amount-of-money
 
-# entities:
-#   - user
-#   - keyword
-#   - state
-#   - time
-#   - task
-
 slots:
   user:
     type: text
     mappings:
       - type: from_entity
         entity: user
-
-  #   keyword:
-  #     type: text
 
   state:
     type: text
@@ -81,9 +71,6 @@ slots:
     mappings:
       - type: from_entity
         entity: amount-of-money
-
-#   days:
-#     type: text
 
 actions:
   - action_utter_state_got
@@ -131,5 +118,3 @@ responses:
     - text: most welcome
     - text: happy to help
     - text: any time
-  # utter_state_got:
-  #   - text: I got your state i will loook into it!!

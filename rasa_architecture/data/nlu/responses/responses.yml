@@ -14,3 +14,8 @@ responses:
 
   utter_chitchat/ask_ishuman:
     - text: "I'm not a human, I'm a bot! 🤖"
+
+  utter_re_type:
+    - text: 'Sorry can you retype that'
+    - text: 'In that case can you retype what you just said'
+    - text: 'Refactor your sentence a bit'
