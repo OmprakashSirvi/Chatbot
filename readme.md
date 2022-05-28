@@ -1,5 +1,29 @@
 This is my CP project where i am creating a chatbot
 
+First create config.env file with follwing variables:
+
+    PORT=8000
+    NODE_HOST=localhost
+
+    FLASK_PORT=5000
+    HOST=127.0.0.1
+    NODE_ENV=development
+
+    DATABASE_CONNECTION_STRING=(YOUR_DATABSE_CONNECTION_STRING)
+    DATABASE_PASSWORD=(YOUR_DATABSE_PASSWORD)
+    DATABASE_NAME=(YOUR_DATABASE_NAME)
+
+    JWT_SECRET=(YOUR_JWT_SECRET_TOKEN)
+    JWT_COOKIE_EXP_IN=90
+    JWT_EXPIRES_IN=90
+
+    GOOGLE_CALENDER_VERSION=v3
+    GOOGLE_CLIENT_ID=(YOUR_GOOGLE_CLIENT_ID)
+    GOOGLE_SECRET=(YOUR_GOOGLSE_SECRET_KEY)
+    REFRESH_TOKEN=(YOUR_GOOGLE_REFRESH_TOKEN)
+
+    OPENWEATHER_API_KEY=(OPEN_WEATHER_API_KEY)
+
 To get started run the following commands
 
     npm install
