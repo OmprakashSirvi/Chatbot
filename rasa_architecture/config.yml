@@ -32,7 +32,7 @@ pipeline:
   #     ambiguity_threshold: 0.1
   - name: 'DucklingEntityExtractor'
     # url of the running duckling server
-    url: 'http://127.0.0.1:5000'
+    url: 'http://127.0.0.1:5001'
     # dimensions to extract
     dimensions: ['time', 'amount-of-money']
     # allows you to configure the locale, by default the language is

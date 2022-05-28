@@ -44,3 +44,11 @@ To start the api server use this command :
 docker run rasa/duckling
 
 rasa run --enable-api --i 127.0.0.1 -p 4000
+
+ports to note:
+
+    rasa/duckling : 5001
+    react : http://localhost:3000
+    rasa actions : http://0.0.0.0:5055
+    flask : http://127.0.0.1:5000
+    node : http://localhost:8000

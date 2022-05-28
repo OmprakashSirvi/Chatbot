@@ -1,7 +1,7 @@
-var today = new Date();
-var date =
+let today = new Date();
+let date =
   today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-var time = today.getHours() + ':' + today.getMinutes();
+let time = today.getHours() + ':' + today.getMinutes();
 
 document.getElementById('msg-info-time').innerHTML = date + '|' + time;
 

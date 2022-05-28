@@ -1,8 +1,4 @@
-from typing import Dict, List, Text, Any
-
-from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
-from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk import Action
 
 import requests
 

@@ -346,4 +346,4 @@ nlu:
       - I paid my [rent](item) [today](time) of worth [7000 rupees](amount-of-money)
       - I spent [100 rupees](amount-of-money) on my [mobile recharge](item)
       - I bought [10 rupees](amount-of-money) [pen](item) [today](time)
-      - i bought a [toy car](item) of worth [2 rupees](price) [today](time)
+      - i bought a [toy car](item) of worth [2 rupees](amount-of-money) [today](time)

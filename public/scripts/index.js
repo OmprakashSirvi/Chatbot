@@ -33,11 +33,13 @@ document
   .querySelector('.msger-send-btn')
   .addEventListener('click', async (e) => {
     e.preventDefault();
-    console.log('clicked');
     // const input = document.querySelector('#msg-input').value;
     const input = document.getElementsByClassName('msger-input')[0];
 
     const output = await speak(input.value);
+    console.log(`Output : ${output}`);
+
+    if (!output) output = 'i did not get that';
 
     const outTemplate = `
       <div class="msg left-msg">

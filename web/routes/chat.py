@@ -20,9 +20,11 @@ class Chat(Resource):
        id = request.get_json()['id']
        msg = request.get_json()['message']
 
-       data = {"sender" : id, "message" : msg}
+       # if message is empty
+       if (msg == ""):
+           return Response(message = "bot replied").sendResponse(data = "Say something man")
 
-       print(data)
+       data = {"sender" : id, "message" : msg}
 
        response = requests.post("http://127.0.0.1:4000/webhooks/rest/webhook", json = data)
     #    print(response.json())

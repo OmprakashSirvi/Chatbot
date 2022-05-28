@@ -1,0 +1,18 @@
+version: '3.1'
+
+stories:
+  - story: create_schedule_happy
+    steps:
+      - intent: schedule_creation
+      - action: action_utter_schedule_confirmation
+      - intent: affirm
+      - action: action_create_schedule
+      - intent: thanking
+      - action: utter_welcome
+
+  - story: story can_you_help
+    steps:
+      - intent: can_you_help
+      - action: utter_agent_can_you_help
+      - intent: schedule_creation
+      - action: action_utter_schedule_confirmation

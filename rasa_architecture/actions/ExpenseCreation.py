@@ -17,7 +17,7 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://expensetracker-9b633-default-rtdb.firebaseio.com/'
 })
 
-ref = db.reference('/')
+root = db.reference('/')
 
 
 
@@ -58,27 +58,30 @@ class GiveUserStateDetails(Action):
         return "action_add_expense"
 
     def run(self, dispatcher, tracker, domain):
+        try:
+            item = tracker.get_slot("item")
+            time = tracker.get_slot("time")
+            price = tracker.get_slot("amount-of-money")
 
-        time = tracker.get_slot("time")
-        item = tracker.get_slot("item")
-        price = tracker.get_slot("amount-of-money")
+            if (time == None):
+                time = datetime.now()
 
-        if (time == None):
-            time = datetime.now()
+            print(f"item : {item}, time : {time}, price : {price}")
 
-        print(f"item : {item}, time : {time}, price : {price}")
+            con_time = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.000+00:00")
+            con_time = int(con_time.timestamp() * 1000)
 
-        con_time = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.000+00:00")
-        con_time = int(con_time.timestamp() * 1000)
+            newExpense = {"item" : item, "price" : price, "time" : con_time}
 
-        newExpense = {"item" : item, "price" : price, "time" : con_time}
-        ref.push().set(newExpense.json())
-        
+            
 
-        # bucket = storage.bucket()
-        # blob = bucket.blob(newExpense)
-        # blob.upload_from_string(json.dumps(newExpense, indent=2))
+            # bucket = storage.bucket()
+            # blob = bucket.blob(newExpense)
+            # blob.upload_from_string(json.dumps(newExpense, indent=2))
 
-        dispatcher.utter_message(text = f"you are purchasing : {item}")
+            dispatcher.utter_message(text = f"you are purchasing : {item}")
+
+        except:
+            dispatcher.utter_message(text = "Something went wrong while creating your expense")
 
         return []
