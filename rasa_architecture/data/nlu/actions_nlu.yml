@@ -114,3 +114,14 @@ nlu:
       - [100 rupees](amount-of-money) [bus ticket](item)
       - [petrol refil](item) of worth [200 rupees](amount-of-money)
       - spent [100 rupees](amount-of-money) on [clothes](item) [today](time)
+
+  - intent: see_expenses
+    examples: |
+      - I want to see my expenses
+      - Give me my expenses
+      - Get my expenses
+      - My expenses
+      - What are my expenses 
+      - Where did i spend my money on
+      - Where did my money go?
+      - Where am i spending my money

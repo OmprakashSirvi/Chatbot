@@ -19,6 +19,7 @@ intents:
   - ask_weather
   - schedule_creation
   - expense_tracker
+  - see_expenses
 
 entities:
   - user
@@ -78,6 +79,7 @@ actions:
   - action_utter_schedule_confirmation
   - action_create_schedule
   - action_add_expense
+  - action_get_expenses
 
 responses:
   utter_greet:

@@ -14,3 +14,8 @@ stories:
     steps:
       - intent: expense_tracker
       - action: action_add_expense
+
+  - story: see_expenses
+    steps:
+      - intent: see_expenses
+      - action: action_get_expenses
