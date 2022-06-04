@@ -12,6 +12,8 @@ const DB = process.env.DATABASE_CONNECTION_STRING.replace(
   process.env.DATABASE_PASSWORD
 );
 
+// Connect with firebase database
+
 mongoose
   .connect(DB, {})
   .then(() => {

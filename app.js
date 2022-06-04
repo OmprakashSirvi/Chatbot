@@ -13,6 +13,7 @@ const viewRoute = require('./Routes/viewRoutes');
 const userRoute = require('./Routes/userRoutes');
 const chatRoute = require('./Routes/chatRoutes');
 const weatherRoute = require('./Routes/weatherRoute');
+const expenseRoute = require('./Routes/expenseRoute');
 const calendarRoute = require('./Routes/calendarRoutes');
 const globalErrorHandler = require('./Controllers/errorController');
 
@@ -91,6 +92,7 @@ app.get('/api/v1/getError', (req, res, next) => {
 app.use('/', viewRoute);
 app.use('/api/v1/chat', chatRoute);
 app.use('/api/v1/user', userRoute);
+app.use('/api/v1/expense', expenseRoute);
 app.use('/api/v1/weather', weatherRoute);
 app.use('/api/v1/schedule', calendarRoute);
 
