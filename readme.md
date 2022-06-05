@@ -63,7 +63,7 @@ To activate follow these steps:
 
     pip install rasa==3.1 --extra-index-url https://pypi.rasa.com/simple
 
-## 5: Meanwhile make sure you have docker installed in your system
+### 5: Meanwhile make sure you have docker installed in your system
 
 ## 6: With docker installed excecute this command:
 
