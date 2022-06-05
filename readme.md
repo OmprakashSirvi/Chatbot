@@ -1,6 +1,6 @@
-This is my CP project where i am creating a chatbot
+# This is my CP project where i am creating a chatbot
 
-First create config.env file with follwing variables:
+## 1: First create config.env file with follwing variables:
 
     PORT=8000
     NODE_HOST=localhost
@@ -24,17 +24,32 @@ First create config.env file with follwing variables:
 
     OPENWEATHER_API_KEY=(OPEN_WEATHER_API_KEY)
 
+You need to setup firebase realtime database to run this app:
+You can check out:
+
+    https://firebase.google.com/docs/database/
+
+Add those envirnoment variables to config.env file:
+
+    FIREBASE_API_KEY
+    FIREBASE_AUTHDOMAIN
+    FIREBASE_DATABASE_URL
+    FIREBASE_PROJECT_ID
+    FIREBASE_STORAGE_BUCKET
+    FIREBASE_MESSAGE_SENDER_ID
+    FIREBASE_APP_ID
+
 To get started run the following commands
 
     npm install
 
-2: create a python virtual envirnoment:
+## 2: create a python virtual envirnoment:
 
     virtualenv chatbot_env --python=python3.8
 
 (recommended version: python 3.8)
 
-3: Now activate your virtual envirnoment
+## 3: Now activate your virtual envirnoment
 
 To activate follow these steps:
 
@@ -44,30 +59,34 @@ To activate follow these steps:
     cd Scripts
     activate
 
-4: And then run this command:
+## 4: And then run this command:
 
     pip install rasa==3.1 --extra-index-url https://pypi.rasa.com/simple
 
-5: Meanwhile make sure you have docker installed in your system
+## 5: Meanwhile make sure you have docker installed in your system
 
-6: With docker installed excecute this command:
+## 6: With docker installed excecute this command:
 
     docker pull rasa/duckling
 
-7: And then install all these packages:
-Flask
-sklearn
-pymongo[srv]
-flask_restful
-flask_pymongo
+## 7: And then install all these packages:
+
+    pip install Flask
+    pip install sklearn
+    pip install pymongo[srv]
+    pip install flask_restful
+    pip install flask_pymongo
 
 Remember to change dir to rasa_architecture folder
+
+---
 
 Run(on new terminal):
 
     cd rasa_architecture
 
-To run chatbot use this:
+## Now running the Project
+
 First traing your model:
 
     rasa train
