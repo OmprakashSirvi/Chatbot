@@ -1,4 +1,3 @@
-from urllib import response
 import requests, datetime
 from typing import Text
 
@@ -13,7 +12,13 @@ class GetExpenses(Action):
             response = requests.get('http://127.0.0.1:8000/api/v1/expense')
             response = response.json()
 
-            dispatcher.utter_message(f"Expenses : {response['data']}")
+            # retStr = ''
+            totalAmount = 0
+
+            for expense in response['data']:
+                totalAmount += int(expense['amount'])
+
+            dispatcher.utter_message(f"Your toal expense : {totalAmount}")
 
         except:
             print("There was some error in getting expenses")

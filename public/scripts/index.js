@@ -1,18 +1,3 @@
-// const URL =
-//   `http://{process.env.HOST}:{process.env.PORT}` ||
-//   'http://127.0.0.1:5000/chat';
-
-const login_function = (username, password) => {
-  const url = '';
-};
-
-// const button = document.querySelector('.msger-send-btn');
-
-// button.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   console.log('clicked');
-// });
-
 const speak = async (input) => {
   try {
     const res = await axios.post('http://127.0.0.1:5000/chat', {
@@ -36,10 +21,12 @@ document
     // const input = document.querySelector('#msg-input').value;
     const input = document.getElementsByClassName('msger-input')[0];
 
-    const output = await speak(input.value);
+    let output = await speak(input.value);
     console.log(`Output : ${output}`);
 
-    if (!output) output = 'i did not get that';
+    if (output === undefined) {
+      output = 'I did not get that';
+    }
 
     const outTemplate = `
       <div class="msg left-msg">

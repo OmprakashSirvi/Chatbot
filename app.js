@@ -63,12 +63,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// /**
-//  * test for google sign in..
-//  */
-app.get('/', (req, res) => {
-  res.render('index.html');
-});
+// app.get('/', (req, res) => {
+//   res.render('index.html');
+// });
 
 // app.get('/login', (req, res) => {
 //   res.render('login');
@@ -95,6 +92,7 @@ app.use('/api/v1/user', userRoute);
 app.use('/api/v1/expense', expenseRoute);
 app.use('/api/v1/weather', weatherRoute);
 app.use('/api/v1/schedule', calendarRoute);
+app.use('/', viewRoute);
 
 // After this no route will be accepted
 app.all('*', (req, res, next) => {

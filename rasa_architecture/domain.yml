@@ -20,6 +20,8 @@ intents:
   - schedule_creation
   - expense_tracker
   - see_expenses
+  - ask_howdoing
+  - user_name
 
 entities:
   - user
@@ -36,6 +38,12 @@ slots:
     mappings:
       - type: from_entity
         entity: user
+
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
 
   state:
     type: text
@@ -86,6 +94,11 @@ responses:
     - text: Hey! How are you?
     - text: Namaste! How you doin?
 
+  utter_greet_user:
+    - text: Hey [name]
+    - text: Hello [name]
+    - text: OK [name]
+
   utter_cheer_up:
     - text: 'Here is something to cheer you up:'
       image: https://i.imgur.com/nGF1K8f.jpg
@@ -120,3 +133,9 @@ responses:
     - text: most welcome
     - text: happy to help
     - text: any time
+
+  utter_how_am_i_doing:
+    - text: I am doing just fine
+    - text: dont you worry about me, I am doing just fine
+    - text: I am doing good, thanks for asking
+    - text: Nothing can harm me I am doing great

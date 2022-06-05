@@ -81,7 +81,7 @@ let toogle = false;
 
 const loginPage = document.querySelector('.login__page');
 const login = document.querySelector('.login');
-
+// if user{
 login.addEventListener('click', (event) => {
   event.preventDefault();
   if (toogle === false) {
@@ -93,7 +93,7 @@ login.addEventListener('click', (event) => {
     toogle = false;
   }
 });
-
+// }
 // For chat window
 
 const button = document.querySelector('.show-button');

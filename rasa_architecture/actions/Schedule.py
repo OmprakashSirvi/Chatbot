@@ -23,7 +23,6 @@ class CreateSchedule(Action):
 
             dispatcher.utter_message(text = f"{response['message']}")
 
-
         except:
             dispatcher.utter_message(text = "something went wrong while doing your work")
 

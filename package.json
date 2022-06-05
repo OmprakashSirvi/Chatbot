@@ -33,7 +33,8 @@
     "nodemailer": "^6.7.5",
     "path": "^0.12.7",
     "request": "^2.88.2",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
